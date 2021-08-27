@@ -32,7 +32,7 @@ if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
 
-git clone $DEPLOY_REPO
+git clone https://${username}:${password}github.com/stormbuf/blog.git
 git checkout -b master origin/main
 
 # Build vuepress project
