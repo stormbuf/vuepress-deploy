@@ -28,6 +28,7 @@ DEPLOY_REPO="https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git"
 if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
+echo $DEPLOY_REPO 
 git clone $DEPLOY_REPO
 git checkout -b master origin/main
 
