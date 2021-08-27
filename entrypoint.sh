@@ -7,15 +7,7 @@ echo ''
 # env
 echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
-
-# Build vuepress project
-echo "==> Start building \n $BUILD_SCRIPT"
-eval "$BUILD_SCRIPT"
-echo "Build success"
-
-# Change directory to the dest
-echo "==> Changing directory to '$BUILD_DIR' ..."
-cd $BUILD_DIR
+echo "workdir : $(pwd)"
 
 # Get respository
 if [[ -z "$TARGET_REPO" ]]; then
@@ -36,6 +28,17 @@ DEPLOY_REPO="https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git"
 if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
+git clone $DEPLOY_REPO
+git checkout -b master origin/main
+
+# Build vuepress project
+echo "==> Start building \n $BUILD_SCRIPT"
+eval "$BUILD_SCRIPT"
+echo "Build success"
+
+# Change directory to the dest
+echo "==> Changing directory to '$BUILD_DIR' ..."
+cd $BUILD_DIR
 
 echo "==> Prepare to deploy"
 
