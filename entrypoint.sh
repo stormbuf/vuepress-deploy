@@ -9,6 +9,9 @@ echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
 echo "workdir : $(pwd)"
 
+git config user.name "${GITHUB_ACTOR}"
+git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
 # Get respository
 if [[ -z "$TARGET_REPO" ]]; then
   REPOSITORY_NAME="${GITHUB_REPOSITORY}"
@@ -28,7 +31,7 @@ DEPLOY_REPO="https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git"
 if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
-echo $DEPLOY_REPO 
+
 git clone $DEPLOY_REPO
 git checkout -b master origin/main
 
@@ -44,8 +47,7 @@ cd $BUILD_DIR
 echo "==> Prepare to deploy"
 
 git init
-git config user.name "${GITHUB_ACTOR}"
-git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+
 
 if [ -z "$(git status --porcelain)" ]; then
     echo "The BUILD_DIR is setting error or nothing produced" && \
