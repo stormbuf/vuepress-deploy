@@ -28,7 +28,7 @@ DEPLOY_REPO="https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git"
 if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
-git clone $DEPLOY_REPO
+git clone git@github.com:stormbuf/blog.git
 git checkout -b master origin/main
 
 # Build vuepress project
