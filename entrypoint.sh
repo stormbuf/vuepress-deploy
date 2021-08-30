@@ -8,7 +8,7 @@ echo ''
 echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
 echo "workdir : $(pwd)"
-mkdir blog
+mkdir -m 777 blog
 cd blog
 git init
 git config user.name "${GITHUB_ACTOR}"
