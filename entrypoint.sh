@@ -8,7 +8,8 @@ echo ''
 echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
 echo "workdir : $(pwd)"
-
+mkdir blog
+git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
@@ -46,8 +47,6 @@ echo "==> Changing directory to '$BUILD_DIR' ..."
 cd $BUILD_DIR
 
 echo "==> Prepare to deploy"
-
-git init
 
 
 if [ -z "$(git status --porcelain)" ]; then
