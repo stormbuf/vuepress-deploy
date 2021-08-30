@@ -35,7 +35,7 @@ if [ "$TARGET_LINK" ]; then
 fi
 
 git clone https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git
-git fetch origin/master
+git fetch origin
 echo "$(ls -al)"
 git checkout -b master origin/master
 
