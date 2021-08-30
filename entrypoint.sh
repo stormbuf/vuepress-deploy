@@ -9,6 +9,7 @@ echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
 echo "workdir : $(pwd)"
 mkdir blog
+cd blog
 git init
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
@@ -33,7 +34,7 @@ if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
 
-git clone https://${USERNAME}:${PASSWORD}github.com/stormbuf/blog.git
+git clone $(DEPLOY_REPO)
 echo "$(ls -al)"
 git checkout -b master origin/main
 
