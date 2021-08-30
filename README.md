@@ -1,3 +1,5 @@
+博客自用！！！！
+由于使用actions/checkout后，git commit 时间被重置了，而博客归档功能依赖于该时间，所以我修改了该action的脚本（entrypoint.sh），将博客仓库的拉取集成了进来。仅适合自用，与博客相关信息耦合。
 English | [简体中文](./README.zh-CN.md)
 # vuepress-deploy
 
