@@ -35,9 +35,9 @@ if [ "$TARGET_LINK" ]; then
 fi
 
 git clone https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git
-git fetch origin/main
+git fetch origin/master
 echo "$(ls -al)"
-git checkout -b master origin/main
+git checkout -b master origin/master
 
 # Build vuepress project
 echo "==> Start building \n $BUILD_SCRIPT"
