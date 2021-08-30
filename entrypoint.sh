@@ -34,7 +34,7 @@ if [ "$TARGET_LINK" ]; then
   DEPLOY_REPO="$TARGET_LINK"
 fi
 
-git clone $(DEPLOY_REPO)
+git clone https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git
 echo "$(ls -al)"
 git checkout -b master origin/main
 
