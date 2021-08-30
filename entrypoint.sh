@@ -7,7 +7,7 @@ echo ''
 # env
 echo "node version: $(node -v)"
 echo "npm version: $(npm -v)"
-echo "workdir : $(pwd)"
+
 mkdir -m 777 blog
 cd blog
 git init
@@ -37,7 +37,6 @@ fi
 git clone https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git
 git remote add origin https://github.com/stormbuf/blog.git
 git fetch origin
-echo "$(ls -al)"
 
 git checkout -b main origin/main
 
