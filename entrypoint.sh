@@ -39,7 +39,7 @@ git remote add origin https://github.com/stormbuf/blog.git
 git fetch origin
 echo "$(ls -al)"
 
-git checkout -b master main
+git checkout -b main origin/main
 
 # Build vuepress project
 echo "==> Start building \n $BUILD_SCRIPT"
@@ -51,6 +51,8 @@ echo "==> Changing directory to '$BUILD_DIR' ..."
 cd $BUILD_DIR
 
 echo "==> Prepare to deploy"
+
+git init
 
 
 if [ -z "$(git status --porcelain)" ]; then
