@@ -38,8 +38,8 @@ git clone https://username:${ACCESS_TOKEN}@github.com/${REPOSITORY_NAME}.git
 git remote add origin https://github.com/stormbuf/blog.git
 git fetch origin
 echo "$(ls -al)"
-git branch –set-upstream master origin/main
-git checkout  master
+
+git checkout -b master main
 
 # Build vuepress project
 echo "==> Start building \n $BUILD_SCRIPT"
