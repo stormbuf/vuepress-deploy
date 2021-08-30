@@ -33,7 +33,7 @@ if [ "$TARGET_LINK" ]; then
 fi
 
 git clone https://${USERNAME}:${PASSWORD}github.com/stormbuf/blog.git
-echo $(ls -al)
+echo "$(ls -al)"
 git checkout -b master origin/main
 
 # Build vuepress project
